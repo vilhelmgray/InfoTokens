@@ -1,0 +1,152 @@
+========================================================================
+                               InfoTokens
+========================================================================
+Simulates an open-content discourse community (e.g. a wiki).
+------------------------------------------------------------------------
+Author:      William Breathitt Gray
+Date:        November 20, 2012
+Version:     1.0
+Copyright:   Simplified BSD License
+ 
+Language:    C
+Standard:    C99
+------------------------------------------------------------------------
+Copyright (c) 2012, William Breathitt Gray
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+========================================================================
+========================================================================
+
+
+-------------------
+ Table of Contents
+-------------------
+I.      About
+II.     Usage
+III.    Output
+IV.     Contact
+
+
+----------
+ I. About
+----------
+InfoTokens simulates the accumulation of information by a virtual
+discourse community. Information is represented as tokens whose states
+can be either true or false. Individuals in the virtual community can
+add, delete, and change tokens. The accumulation of true and false
+information -- due to the population's accuracy, rate of vandalism,
+correction of vandalism, and population growth -- can then be studied
+for trends.
+
+I created InfoTokens to study how open-content communities such as
+Wikipedia are able to produce reliable documents, despite having little
+intervention in the selection of community members and external auditing
+of the accuracy of the information accumulated; how could order come out
+of such anarchy?
+
+My hypothesis is that the amount of true information accrues at a faster
+rate than the amount of false information; in general, I suspect that as
+the population size increases, the percentage of false information
+approaches zero as time passes. The only requirements I would add are
+that the accuracy of population is more than 50%, and over half of the
+population is sincerely attempting to maintain an accurate document.
+Furthermore, I expect this trend to occur in both open-content and
+closed-content communities.
+
+The reasoning is rather simple: there is a buildup of true information
+because the sincere individuals aim for such; similarly, false
+information is actively removed by the sincere individuals, thus
+creating a natural resistence to the accumulation of false information.
+Following from this logic, an open-content community may produce more
+reliable documents than a closed-content community because the
+open-content community consists of more individuals (even if those
+individuals are less accurate).
+
+During my first year as a student at the University of Central Florida,
+I had the opportunity in my English Composition class to write a
+research paper on open-content discourse communities; I naturally used
+this as an excuse to program InfoTokens. However, my initial attempt at
+programming InfoTokens (infotokens-0.1) failed due to an overly complex
+design and a deadline for my research paper. As such, I made up the
+results attributed to InfoTokens in the conclusion of my research paper
+and put the development of the program on hold until I would have enough
+free time to finish it. The research I did for school is provided under
+the "research" directory for the sake of completion, in the hopes that
+it proves useful to someone.
+
+Three years after my first attempt, I completed InfoTokens
+(infotokens-1.0) with a more frugal design based on average effect
+rather than random selections. After running the simulation several
+times with different configurations, I discover that the accuracy of the
+information produced by the population trends toward a limit.
+This does not match with my hypothesis of an ever increasing accuracy,
+nor with the real life examples of wikis. I suspect this limit is
+arising due to the nature of the simulation: tokens accrue in set
+intervals (by generation) rather than the decentralized nature of true
+discourse. For now however, I leave the task of properly dissecting the
+behavior of InfoTokens, and open-content communities in general, to
+whomever decides to undertake it.
+
+
+-----------
+ II. Usage
+-----------
+To build from source, use the Makefile in the source root directory:
+
+    # make
+
+For more specific build instructions, refer to the INSTALL file in the
+source root directory.
+
+Execute the infotokens file to run the main program:
+
+    # ./infotokens
+
+InfoTokens will present several prompts for input to configure the
+simulation.
+
+-------------
+ III. Output
+-------------
+If the simulation was configured for file output, InfoTokens will output
+the simulation data for each generation in the following format:
+
+    Generation_Number True_Tokens False_Tokens Accuracy Population_Size
+
+After the simulation ends, InfoTokens will output a summary line to the
+the standard input in the following format:
+
+    True_Tokens False_Tokens Accuracy Population_Size
+
+
+-------------
+ IV. Contact
+-------------
+Send bug reports, feature requests, and salutations to:
+
+    vilhelm.gray@gmail.com
+
+Feel free to send a message about anything you find interesting or if
+you just want to talk. The life of a FOSS developer can get rather
+lonely at times. :)

@@ -1,0 +1,32 @@
+determine rate of growth for population based on internet growth
+get statistics for vandalization/fraud to determine rate of malicious additions/changes
+get SAT of students to determine accuracy
+administer SAT to teachers to determine accuracy
+get number of publications divided by time to determine rate of information added
+use web poll to determine rate of contribution
+record IP of visitors to determine percent of users who contribute
+
+webpoll shows percent of population for each question
+q1. If you knew original information on a topic, would you add it on a wiki? (rate of growth = yes/contributing population)
+q2. If you spotted false information, would you change/delete it? (rate of modification = yes/contributing population)
+
+change = addition + deletion
+rate of contribution = contributing population / total population
+
+1. determine if passive or active user
+2. if active, determine if user modifies and/or adds information
+3. determine if user is good or malicious
+4. if modifies, randomly select a token
+5. determine if user accurately identifies what type of token
+5.a. malicious user will not check, just automatically delete
+6. if user identified token as maletoken, delete token
+7. if user adds, determine if new information is correct or not and add token occurdingly
+7.a. malicious user will automatically add a maletoken
+
+1. rate of contribution
+2. rate of growth, rate of modification
+3. rate of vandalism/fraud
+4. random number generator
+5. population accuracy
+6. N/A
+7. population accuracy
